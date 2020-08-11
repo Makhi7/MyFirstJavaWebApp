@@ -13,8 +13,11 @@ import static spark.Spark.*;
 public class App {
 
     public static void main(String[] args) {
+
+        port(getHerokuAssignedPort());
+
         staticFiles.location("/public");
-        init();
+
 
         List<String> usernames = new ArrayList<>();
 
@@ -56,15 +59,6 @@ public class App {
 
                 },
                 new HandlebarsTemplateEngine());
-
-
-       // get("/greeted/:username", (request, response) -> {
-        // if (usernames.)
-         //   return
-        // });
-        // ArrayList <Person>
-
-        port(getHerokuAssignedPort());
 
     }
 
